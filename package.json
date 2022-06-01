@@ -31,7 +31,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
     "react-typography": "^0.16.19",
-    "sharp": "^0.23.2",
+    "sharp": "^0.30.5",
     "typeface-merriweather": "^0.0.72",
     "typeface-muli": "^0.0.71"
   },
