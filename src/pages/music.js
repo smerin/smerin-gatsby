@@ -14,7 +14,7 @@ class MusicPage extends Component {
           title="Guitarist, kora player and world music enthusiast"
           description="Tutorial videos and articles on guitar, kora and world music. Join me on a journey in discovering music from around the world!"
           pathname="/music"
-          image={previewImage.childImageSharp.fixed.src}
+          image={previewImage.childImageSharp.gatsbyImageData}
         />
         <PageBanner
           title="Music"
@@ -88,16 +88,12 @@ export const musicBannerQuery = graphql`
   query {
     banner: file(relativePath: { eq: "music-banner.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2400) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     previewImage: file(relativePath: { eq: "preview/music-preview.jpg" }) {
       childImageSharp {
-        fixed(width: 1200, height: 630) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED, width: 1200, height: 630)
       }
     }
   }

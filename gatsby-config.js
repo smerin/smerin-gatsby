@@ -8,10 +8,11 @@ module.exports = {
     twitterUsername: "@smerindigital"
   },
   plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -29,7 +30,7 @@ module.exports = {
               width: 800,
               height: 450,
               related: false,
-              noIframeBorder: true
+              noIframeBorder: true,
             }
           },
           "gatsby-remark-responsive-iframe"

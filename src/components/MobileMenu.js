@@ -3,11 +3,14 @@ import { Link } from "gatsby";
 import * as style from "./MobileMenu.module.scss";
 
 class MobileMenu extends Component {
-  state = {
-    showMenu: false
-  };
+  constructor(props) {
+    this.state = {
+      showMenu: false
+    };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
 
-  toggleMenu = () => {
+  toggleMenu() {
     this.setState({
       showMenu: !this.state.showMenu
     });

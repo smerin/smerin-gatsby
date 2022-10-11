@@ -15,7 +15,7 @@ class WebsitesPage extends Component {
           title="React JS / JavaScript front-end developer in Bristol"
           description="Front-end developer specialising in React JS, JavaScript, Gatsby, GraphQL and Node JS. Strong UX / UI skills. Call 07887 868522 or email mail@smerin.com"
           pathname="/websites"
-          image={previewImage.childImageSharp.fixed.src}
+          image={previewImage.childImageSharp.gatsbyImageData}
         />
         <PageBanner
           title="Websites"
@@ -34,16 +34,12 @@ export const websitesBannerQuery = graphql`
   query {
     banner: file(relativePath: { eq: "websites-banner.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2400) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     previewImage: file(relativePath: { eq: "preview/websites-preview.jpg" }) {
       childImageSharp {
-        fixed(width: 1200, height: 630) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED, width: 1200, height: 630)
       }
     }
   }

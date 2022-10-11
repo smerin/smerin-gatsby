@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import * as style from "./PostGrid.module.scss";
 
 const PostGrid = ({ title, posts }) => {
@@ -8,9 +8,7 @@ const PostGrid = ({ title, posts }) => {
     query {
       image: file(relativePath: { eq: "preview/default-preview.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 600)
         }
       }
     }
@@ -34,14 +32,14 @@ const PostGrid = ({ title, posts }) => {
               <li key={index} className={style.post}>
                 <Link to={path}>
                   {previewImage ? (
-                    <Img
+                    <GatsbyImage
                       alt={title}
-                      fluid={previewImage.childImageSharp.fluid}
+                      image={previewImage.childImageSharp.gatsbyImageData}
                     />
                   ) : (
-                    <Img
+                    <StaticImage
                       alt={title}
-                      fluid={defaultPreviewImage.image.childImageSharp.fluid}
+                      src="../images/preview/default-preview.jpg"
                     />
                   )}
                 </Link>
@@ -49,9 +47,6 @@ const PostGrid = ({ title, posts }) => {
                   <Link to={path}>{title}</Link>
                 </h3>
                 <p>{excerpt}</p>
-                {/* <LinkButton className="button" url={path}>
-                    Read more
-                  </LinkButton> */}
               </li>
             );
           })}

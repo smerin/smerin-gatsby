@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Template, SEO, ContentFeature, Mailchimp } from "../components";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { Template, SEO, ContentFeature } from "../components";
+import Mailchimp from "../components/Mailchimp";
 import * as style from "./BlogPost.module.scss";
 
 export default function BlogTemplate({ data, location }) {
@@ -16,13 +17,13 @@ export default function BlogTemplate({ data, location }) {
         title={seoTitle}
         description={seoDescription}
         pathname={location.pathname}
-        image={previewImage.childImageSharp.fixed.src}
+        image={previewImage.childImageSharp.gatsbyImageData}
         article
       />
       <div className={style.banner}>
         {banner && (
           <div>
-            <Img alt={title} fluid={banner.childImageSharp.fluid} />
+            <GatsbyImage alt={title} image={banner.childImageSharp.gatsbyImageData} />
           </div>
         )}
       </div>
@@ -58,16 +59,12 @@ export const pageQuery = graphql`
         title
         previewImage {
           childImageSharp {
-            fixed(width: 1200, height: 630) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(layout: FIXED, width: 1200, height: 630)
           }
         }
         banner {
           childImageSharp {
-            fluid(maxWidth: 1800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         seoTitle

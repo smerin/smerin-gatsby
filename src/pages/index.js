@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Template from "../components/Template";
 import PageBanner from "../components/PageBanner";
-import KoraFeature from "../components/KoraFeature";
 import PostGrid from "../components/PostGrid";
 
 class HomePage extends Component {
@@ -20,7 +19,7 @@ class HomePage extends Component {
           title="George Smerin | Musician and web developer from Bristol, UK"
           titleTemplate="%s"
           pathname=""
-          image={previewImage.childImageSharp.fixed.src}
+          image={previewImage.childImageSharp.gatsbyImageData}
           description="Welcome to the website of George Smerin, musician and web developer from Bristol (UK). Read all about my recent adventures in music and technology."
         />
         <PageBanner
@@ -28,7 +27,6 @@ class HomePage extends Component {
           subtitle="Musician and web developer from Bristol, UK"
           banner={banner}
         />
-        {/* <KoraFeature /> */}
         <PostGrid posts={posts} title="Latest from the blog" />
       </Template>
     );
@@ -41,16 +39,12 @@ export const homePageQuery = graphql`
   query {
     banner: file(relativePath: { eq: "home-banner.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2400) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     previewImage: file(relativePath: { eq: "preview/home-preview.jpg" }) {
       childImageSharp {
-        fixed(width: 1200, height: 630) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED, width: 1200, height: 630)
       }
     }
     allMarkdownRemark(
@@ -66,9 +60,7 @@ export const homePageQuery = graphql`
             excerpt
             previewImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600)
               }
             }
           }
