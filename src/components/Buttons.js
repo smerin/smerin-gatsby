@@ -10,7 +10,7 @@ import {
   FaYoutube,
   FaFacebook
 } from "react-icons/fa";
-import style from "./Buttons.module.scss";
+import * as style from "./Buttons.module.scss";
 
 export const LinkButton = ({ alt, url, children }) => {
   const className = cx(style.button, {

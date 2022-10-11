@@ -3,8 +3,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import { LinkButton } from "./Buttons";
 import Mailchimp from "./Mailchimp";
-
-import style from "./KoraFeature.module.scss";
+import * as style from "./KoraFeature.module.scss";
 
 const KoraFeature = ({ data: { banner } }) => {
   return (

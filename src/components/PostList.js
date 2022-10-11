@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import style from "./PostList.module.scss";
+import * as style from "./PostList.module.scss";
 
 const PostList = ({ posts }) => {
   return (
-    <ul className={style.postList}>
+    <ul>
       {posts.map(({ node: post }, index) => {
         const { path, title, date, excerpt, banner } = post.frontmatter;
         return (

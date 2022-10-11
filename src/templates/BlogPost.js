@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Template, SEO, ContentFeature, Mailchimp } from "../components";
-import style from "./BlogPost.module.scss";
+import * as style from "./BlogPost.module.scss";
 
 export default function BlogTemplate({ data, location }) {
   const { markdownRemark } = data;
@@ -21,7 +21,7 @@ export default function BlogTemplate({ data, location }) {
       />
       <div className={style.banner}>
         {banner && (
-          <div className={style.bannerImage}>
+          <div>
             <Img alt={title} fluid={banner.childImageSharp.fluid} />
           </div>
         )}

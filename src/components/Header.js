@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 import MainMenu from "./MainMenu";
-import style from "./Header.module.scss";
 import logo from "../images/gs-logo.png";
+import * as style from "./Header.module.scss";
+
 const Header = () => {
   return (
     <header className={style.header}>

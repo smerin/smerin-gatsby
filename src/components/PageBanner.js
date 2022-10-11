@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
-import style from "./PageBanner.module.scss";
+import * as style from "./PageBanner.module.scss";
 
 const PageBanner = ({ title, subtitle, banner }) => {
   return (

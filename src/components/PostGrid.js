@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import style from "./PostGrid.module.scss";
+import * as style from "./PostGrid.module.scss";
 
 const PostGrid = ({ title, posts }) => {
   const defaultPreviewImage = useStaticQuery(graphql`

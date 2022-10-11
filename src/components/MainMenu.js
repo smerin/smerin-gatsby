@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import style from "./MainMenu.module.scss";
 import { menuItems } from "../utils/menuItems";
+import * as style from "./MainMenu.module.scss";
 
 const MainMenu = () => (
   <nav role="navigation">

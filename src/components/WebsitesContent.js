@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./WebsitesContent.module.scss";
 import { FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 import { EmailButton, LinkedinButton, TwitterButton } from "./Buttons";
 import { ContentFeature } from "./ContentFeature";
@@ -8,6 +7,7 @@ import reduxIcon from "../images/icons/redux-icon.svg";
 import graphqlIcon from "../images/icons/graphql-icon.svg";
 import nodeIcon from "../images/icons/node-icon.svg";
 import uxuiIcon from "../images/icons/uxui-icon.svg";
+import * as style from "./WebsitesContent.module.scss";
 
 const WebsitesContent = () => (
   <div className="container">
@@ -39,7 +39,7 @@ const WebsitesContent = () => (
         </div>
       </ContentFeature>
 
-      <h2 className={style.skillsTitle}>My key skills &amp; interests</h2>
+      <h2>My key skills &amp; interests</h2>
       <p>
         I love learning and am fascinated by how quickly the JavaScript
         ecosystem is developing. Below are some of the technologies I have been

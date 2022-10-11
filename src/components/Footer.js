@@ -10,7 +10,7 @@ import {
   FacebookButton,
   TwitterButton
 } from "./Buttons";
-import style from "./Footer.module.scss";
+import * as style from "./Footer.module.scss";
 
 const Footer = () => {
   return (

@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-// import { LinkButton } from "./Buttons";
-import style from "./PostPreview.module.scss";
+import * as style from "./PostPreview.module.scss";
 
 const PostPreview = ({ post }) => {
   const { path, title, date, excerpt, banner } = post.frontmatter;

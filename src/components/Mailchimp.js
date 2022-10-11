@@ -6,7 +6,7 @@ import {
   FaCheckCircle,
   FaExclamationCircle
 } from "react-icons/fa";
-import style from "./Mailchimp.module.scss";
+import * as style from "./Mailchimp.module.scss";
 
 export class Mailchimp extends Component {
   state = {

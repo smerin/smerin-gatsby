@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import style from "./MobileMenu.module.scss";
+import * as style from "./MobileMenu.module.scss";
 
 class MobileMenu extends Component {
   state = {
