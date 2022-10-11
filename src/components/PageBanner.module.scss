@@ -4,6 +4,10 @@
   position: relative;
   background: $saffron;
   overflow: hidden;
+
+  @include breakpoint(tablet) {
+    background: $turquoise;
+  }
 }
 
 .bannerContent {
